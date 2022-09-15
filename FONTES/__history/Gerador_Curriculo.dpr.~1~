@@ -1,0 +1,18 @@
+program Gerador_Curriculo;
+
+uses
+  Vcl.Forms,
+  U_Principal in 'U_Principal.pas' {Form1},
+  U_Curriculo in 'U_Curriculo.pas' {Form2},
+  U_Dm in 'U_Dm.pas' {DataModule1: TDataModule};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.Run;
+end.

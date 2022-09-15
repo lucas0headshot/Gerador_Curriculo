@@ -1,0 +1,29 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 150
+  Width = 215
+  object Driver: TFDPhysMySQLDriverLink
+    VendorLib = 'C:\3-52\Marcos e Lucas Ronchi\Gerador_Curriculo\LIB\libmySQL.dll'
+    OnDriverCreated = DriverDriverCreated
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=Gerador_Curriculo'
+      'DriverID=MySQL')
+    Left = 32
+    Top = 48
+  end
+  object tb_curriculo: TFDTable
+    IndexFieldNames = 'Produto_ID'
+    UpdateOptions.UpdateTableName = 'Sistema_Hardware.produto'
+    TableName = 'Sistema_Hardware.produto'
+    Left = 96
+    Top = 8
+  end
+  object DS_Curriculo: TDataSource
+    DataSet = tb_curriculo
+    OnDataChange = DS_CurriculoDataChange
+    Left = 120
+    Top = 64
+  end
+end

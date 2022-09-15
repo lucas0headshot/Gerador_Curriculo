@@ -1,0 +1,32 @@
+unit U_Dm;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TDataModule1 = class(TDataModule)
+    Driver: TFDPhysMySQLDriverLink;
+    FDConnection1: TFDConnection;
+    tb_curriculo: TFDTable;
+    DS_Curriculo: TDataSource;
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule1: TDataModule1;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+uses U_Curriculo, U_Principal;
+
+{$R *.dfm}
+
+end.

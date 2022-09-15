@@ -1,0 +1,28 @@
+unit U_Dm;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Phys.MySQLDef, FireDAC.Stan.Intf,
+  FireDAC.Phys, FireDAC.Phys.MySQL;
+
+type
+  TDataModule1 = class(TDataModule)
+    Driver: TFDPhysMySQLDriverLink;
+    procedure DriverDriverCreated(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DataModule1: TDataModule1;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.
