@@ -19,9 +19,8 @@ type
     Criar1: TMenuItem;
     Sair1: TMenuItem;
     procedure TimerTimer(Sender: TObject);
-    procedure Produto2Click(Sender: TObject);
-    procedure Produto1Click(Sender: TObject);
     procedure SairClick(Sender: TObject);
+    procedure Curriculo1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,11 +36,17 @@ implementation
 
 uses U_Curriculo, U_Dm;
 
-Procedure TFrm_Principal.Curriculo(Sender: TObject);
+Procedure TFrm_Curriculo(Sender: TObject);
   Begin
     Frm_Curriculo.Visible:= true;
     Frm_Principal.Visible:= false;
   End;
+
+procedure TFrm_Principal.Curriculo1Click(Sender: TObject);
+  begin
+    Frm_Curriculo.Visible:= true;
+    Frm_Principal.Visible:= false;
+  end;
 
 Procedure TFrm_Principal.SairClick(Sender: TObject);
   Begin

@@ -106,8 +106,12 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="U_Produto.pas">
-            <Form>Frm_Produto</Form>
+        <DCCReference Include="U_Principal.pas">
+            <Form>Frm_Principal</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="U_Curriculo.pas">
+            <Form>Frm_Curriculo</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
   FireDAC.Phys.MySQL, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
-  FireDAC.Comp.Client;
+  FireDAC.Comp.Client, frxClass, frxDBSet;
 
 type
   TDm = class(TDataModule)
@@ -30,6 +30,8 @@ type
     tb_curriculoNome_Escola: TStringField;
     tb_curriculoFormacao: TStringField;
     tb_curriculoInformacoes_Formacao: TStringField;
+    Report: TfrxReport;
+    Ds_Rel_Curriculo: TfrxDBDataset;
 
   private
     { Private declarations }

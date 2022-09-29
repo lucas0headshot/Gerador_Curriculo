@@ -2971,7 +2971,6 @@ object Frm_Principal: TFrm_Principal
     Align = alTop
     Caption = 'Panel'
     TabOrder = 1
-    ExplicitTop = 8
   end
   object Timer: TTimer
     OnTimer = TimerTimer
@@ -2981,8 +2980,10 @@ object Frm_Principal: TFrm_Principal
     Top = 40
     object Curriculo1: TMenuItem
       Caption = 'Curriculo'
+      OnClick = Curriculo1Click
       object Criar1: TMenuItem
         Caption = 'Criar'
+        OnClick = Curriculo1Click
       end
     end
     object Sair1: TMenuItem
