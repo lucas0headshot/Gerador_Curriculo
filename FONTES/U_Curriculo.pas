@@ -14,19 +14,32 @@ type
     tb_produto: TTabSheet;
     txt_ID: TDBEdit;
     txt_Nome: TDBEdit;
-    txt_Descricao: TDBEdit;
-    txt_Especificacoes: TDBEdit;
-    txt_Preco: TDBEdit;
-    db_Disponibilidade: TDBComboBox;
-    txt_Quantidade: TDBEdit;
-    txt_Codigo: TDBEdit;
-    txt_Caracteristicas: TDBEdit;
     Menu: TMainMenu;
     Sair1: TMenuItem;
-    txt_Peso: TDBEdit;
-    txt_data: TDBEdit;
+    txt_Funcao: TDBEdit;
+    Image1: TImage;
+    txt_Informacoes_Pessoais: TDBEdit;
+    txt_Interesses_Pessoais: TDBEdit;
+    txt_Endereco: TDBEdit;
+    txt_Celular: TDBEdit;
+    txt_Email: TDBEdit;
+    txt_Link_Portifolio: TDBEdit;
+    txt_Link_LinkedIn: TDBEdit;
+    txt_Link_Instagram: TDBEdit;
+    Image2: TImage;
+    Image3: TImage;
+    txt_Nome_Escola: TDBEdit;
+    txt_Formacao: TDBEdit;
+    txt_Especializacoes: TDBEdit;
+    txt_Detalhes_Ultimo_Emprego: TDBEdit;
+    txt_Empresa_Ultimo_Emprego: TDBEdit;
+    txt_Ultimo_Emprego: TDBEdit;
+    btn_inserir: TSpeedButton;
+    btn_salvar: TSpeedButton;
+    btn_imprimir: TButton;
     procedure btn_inserirClick(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
+    procedure btn_salvarClick(Sender: TObject);
   private
   public
     { Public declarations }
@@ -40,6 +53,12 @@ implementation
 {$R *.dfm}
 
 uses U_Dm, U_principal;
+
+procedure TFrm_Curriculo.btn_salvarClick(Sender: TObject);
+begin
+  Dm.tb_Curriculo.Post; //Salva dados na tabela
+  ShowMessage('Salvo com sucesso');
+end;
 
 Procedure TFrm_Curriculo.Sair1Click(Sender: TObject); //Fecha o programa
   Begin
@@ -58,7 +77,7 @@ Procedure TFrm_Curriculo.btn_inserirClick(Sender: TObject); //Inserir
     Dm.tb_Curriculo.Active:= true; //Incia inserção
     Dm.tb_Curriculo.Insert;
 
-    txt_nome.SetFocus; //Foca no nome
+    txt_Nome.SetFocus; //Foca no nome
   End;
 
 End.
