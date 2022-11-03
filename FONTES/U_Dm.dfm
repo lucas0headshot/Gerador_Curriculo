@@ -1,5 +1,6 @@
 object Dm: TDm
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Height = 170
   Width = 234
   object Driver: TFDPhysMySQLDriverLink
@@ -7,11 +8,12 @@ object Dm: TDm
       'C:\3-52\Marcos e Lucas Ronchi\Gerador_Curriculo\Gerador_Curricul' +
       'o\LIB\libmySQL.dll'
   end
-  object FDConnection1: TFDConnection
+  object FDConnection: TFDConnection
     Params.Strings = (
       'Database=Gerador_Curriculo'
       'User_Name=root'
       'DriverID=MySQL')
+    Connected = True
     Left = 32
     Top = 48
   end
@@ -22,7 +24,7 @@ object Dm: TDm
   end
   object tb_curriculo: TFDTable
     IndexFieldNames = 'ID_Curriculo'
-    Connection = FDConnection1
+    Connection = FDConnection
     UpdateOptions.UpdateTableName = 'Gerador_Curriculo.curriculo'
     TableName = 'Gerador_Curriculo.curriculo'
     Left = 88
@@ -31,7 +33,6 @@ object Dm: TDm
       FieldName = 'ID_Curriculo'
       Origin = 'ID_Curriculo'
       ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = True
     end
     object tb_curriculoNome: TStringField
       AutoGenerateValue = arDefault
@@ -111,6 +112,30 @@ object Dm: TDm
       Required = True
       Size = 250
     end
+    object tb_curriculoUltimo_Emprego: TStringField
+      FieldName = 'Ultimo_Emprego'
+      Origin = 'Ultimo_Emprego'
+      Required = True
+      Size = 100
+    end
+    object tb_curriculoEmpresa_Ultimo_Emprego: TStringField
+      FieldName = 'Empresa_Ultimo_Emprego'
+      Origin = 'Empresa_Ultimo_Emprego'
+      Required = True
+      Size = 100
+    end
+    object tb_curriculoDetalhes_Ultimo_Emprego: TStringField
+      FieldName = 'Detalhes_Ultimo_Emprego'
+      Origin = 'Detalhes_Ultimo_Emprego'
+      Required = True
+      Size = 250
+    end
+    object tb_curriculoEspecializacoes: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'Especializacoes'
+      Origin = 'Especializacoes'
+      Size = 100
+    end
   end
   object Report: TfrxReport
     Version = '2021.3'
@@ -120,8 +145,8 @@ object Dm: TDm
     PreviewOptions.Zoom = 1.000000000000000000
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
-    ReportOptions.CreateDate = 44833.452675393520000000
-    ReportOptions.LastChange = 44833.452675393520000000
+    ReportOptions.CreateDate = 44833.452675393500000000
+    ReportOptions.LastChange = 44833.452675393500000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -129,7 +154,11 @@ object Dm: TDm
       'end.')
     Left = 16
     Top = 104
-    Datasets = <>
+    Datasets = <
+      item
+        DataSet = Ds_Rel_Curriculo
+        DataSetName = 'frxDBDataset1'
+      end>
     Variables = <>
     Style = <>
     object Data: TfrxDataPage
@@ -148,10 +177,13 @@ object Dm: TDm
       MirrorMode = []
       object Picture1: TfrxPictureView
         AllowVectorExport = True
-        Left = -68.031540000000000000
-        Top = -132.283550000000000000
+        Left = -56.692950000000000000
+        Top = -94.488250000000000000
         Width = 907.087200000000000000
         Height = 1235.906310000000000000
+        DataField = 'Funcao'
+        DataSet = Ds_Rel_Curriculo
+        DataSetName = 'frxDBDataset1'
         Frame.Typ = []
         Picture.Data = {
           0954506E67496D61676589504E470D0A1A0A0000000D49484452000005860000
@@ -1834,6 +1866,7 @@ object Dm: TDm
   object Ds_Rel_Curriculo: TfrxDBDataset
     UserName = 'frxDBDataset1'
     CloseDataSource = False
+    DataSource = DS_Curriculo
     BCDToCurrency = False
     DataSetOptions = []
     Left = 120

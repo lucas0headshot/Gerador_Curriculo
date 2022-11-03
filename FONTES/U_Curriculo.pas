@@ -27,7 +27,6 @@ type
     txt_Link_LinkedIn: TDBEdit;
     txt_Link_Instagram: TDBEdit;
     Image2: TImage;
-    Image3: TImage;
     txt_Nome_Escola: TDBEdit;
     txt_Formacao: TDBEdit;
     txt_Especializacoes: TDBEdit;

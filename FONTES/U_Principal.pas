@@ -11,8 +11,6 @@ type
   TFrm_Principal = class(TForm)
     Timer: TTimer;
     StatusBar: TStatusBar;
-    Image_1: TImage;
-    Image_2: TImage;
     Panel: TPanel;
     Menu: TMainMenu;
     Curriculo1: TMenuItem;

@@ -13,9 +13,11 @@ uses
 type
   TDm = class(TDataModule)
     Driver: TFDPhysMySQLDriverLink;
-    FDConnection1: TFDConnection;
+    FDConnection: TFDConnection;
     DS_Curriculo: TDataSource;
     tb_curriculo: TFDTable;
+    Report: TfrxReport;
+    Ds_Rel_Curriculo: TfrxDBDataset;
     tb_curriculoID_Curriculo: TFDAutoIncField;
     tb_curriculoNome: TStringField;
     tb_curriculoFuncao: TStringField;
@@ -30,8 +32,11 @@ type
     tb_curriculoNome_Escola: TStringField;
     tb_curriculoFormacao: TStringField;
     tb_curriculoInformacoes_Formacao: TStringField;
-    Report: TfrxReport;
-    Ds_Rel_Curriculo: TfrxDBDataset;
+    tb_curriculoUltimo_Emprego: TStringField;
+    tb_curriculoEmpresa_Ultimo_Emprego: TStringField;
+    tb_curriculoDetalhes_Ultimo_Emprego: TStringField;
+    tb_curriculoEspecializacoes: TStringField;
+    procedure DataModuleCreate(Sender: TObject);
 
   private
     { Private declarations }
@@ -49,5 +54,18 @@ implementation
 uses U_Curriculo, U_Principal;
 
 {$R *.dfm}
+
+procedure TDm.DataModuleCreate(Sender: TObject);
+begin
+  FDconnection.Params.Database:= 'Gerador_Curriculo'; //Parâmetros
+  FDconnection.Params.UserName:= 'root';
+  FDconnection.Params.Password:= '';
+
+  FDconnection.Connected:= true; //Conexão
+  Driver.VendorLib:= GetCurrentDir + '\LIB\libmysql.dll';
+
+  tb_Curriculo.TableName := 'Curriculo'; //Especifica a tabela do Banco de Dados
+  tb_Curriculo.Active := true;
+end;
 
 end.

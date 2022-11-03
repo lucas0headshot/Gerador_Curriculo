@@ -33,6 +33,7 @@ object Dm: TDm
       FieldName = 'ID_Curriculo'
       Origin = 'ID_Curriculo'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object tb_curriculoNome: TStringField
       AutoGenerateValue = arDefault
@@ -106,12 +107,6 @@ object Dm: TDm
       Required = True
       Size = 100
     end
-    object tb_curriculoInformacoes_Formacao: TStringField
-      FieldName = 'Informacoes_Formacao'
-      Origin = 'Informacoes_Formacao'
-      Required = True
-      Size = 250
-    end
     object tb_curriculoUltimo_Emprego: TStringField
       FieldName = 'Ultimo_Emprego'
       Origin = 'Ultimo_Emprego'
@@ -177,8 +172,8 @@ object Dm: TDm
       MirrorMode = []
       object Picture1: TfrxPictureView
         AllowVectorExport = True
-        Left = -56.692950000000000000
-        Top = -94.488250000000000000
+        Left = -49.133890000000000000
+        Top = -166.299320000000000000
         Width = 907.087200000000000000
         Height = 1235.906310000000000000
         DataField = 'Funcao'

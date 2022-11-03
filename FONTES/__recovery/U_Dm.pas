@@ -31,7 +31,6 @@ type
     tb_curriculoLink_Instagram: TStringField;
     tb_curriculoNome_Escola: TStringField;
     tb_curriculoFormacao: TStringField;
-    tb_curriculoInformacoes_Formacao: TStringField;
     tb_curriculoUltimo_Emprego: TStringField;
     tb_curriculoEmpresa_Ultimo_Emprego: TStringField;
     tb_curriculoDetalhes_Ultimo_Emprego: TStringField;
